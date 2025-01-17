@@ -1,6 +1,8 @@
 package View;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainWindow extends JFrame {
     private JPanel contentPane;
@@ -10,10 +12,6 @@ public class MainWindow extends JFrame {
     private JLabel textResultado;
     private JButton buttonConfirmar;
 
-    public String getTextCpf() {
-        return textCpf.getText();
-    }
-
     public MainWindow(){
         setTitle("Conversor de CPF");
         setSize(400,200);
@@ -22,9 +20,19 @@ public class MainWindow extends JFrame {
         setContentPane(contentPane);
         pack();
         setVisible(true);
+
+        buttonConfirmar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getCpf();
+                System.out.println(getCpf());
+            }
+        });
     }
 
-    public static void main(String[] args) {
-
+    public String getCpf(){
+        return textCpf.getText();
     }
+
+
 }
