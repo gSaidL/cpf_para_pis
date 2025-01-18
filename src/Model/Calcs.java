@@ -18,7 +18,7 @@ public class Calcs {
 
     public int Div(int num){
         int result = num % 11;
-        if(11 - result < 2){
+        if(result < 2){
             return 0;
         }
         else{
